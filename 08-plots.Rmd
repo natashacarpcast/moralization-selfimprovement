@@ -1,0 +1,100 @@
+---
+title: "plots2"
+author: "Natasha Carpio Castellanos"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(forcats)
+library(readr)
+
+# LOAD DATA
+data <- read_csv("data/final_data.csv")
+```
+```{r}
+# DEFINE TOPIC LABELS
+topic_mapping <- c(
+  "Topic 1" = "Habits &\n Goals",
+  "Topic 2" = "Education &\n Career",
+  "Topic 3" = "Social\n life",
+  "Topic 4" = "Health &\n Fitness",
+  "Topic 5" = "Social\n media &\n Entertainment",
+  "Topic 6" = "Confidence &\n Dating",
+  "Topic 7" = "Family &\n Finances",
+  "Topic 8" = "Learning",
+  "Topic 9" = "Mental\n health"
+)
+
+# DEFINE COLORS
+color_topics = c(
+  "Habits &\n Goals" = "#E69F00",
+  "Education &\n Career" = "#0072B2",
+  "Social\n life" = "#56B4E9",
+  "Health &\n Fitness" = "#009E73",
+  "Social\n media &\n Entertainment" = "#F0E442",
+  "Confidence &\n Dating" = "#D55E00",
+  "Family &\n Finances" = "#CC79A7",
+  "Learning" = "#999999",
+  "Mental\n health" = "#660099"
+)
+```
+
+
+```{r}
+# BASE PLOT FUNCTION
+make_foundation_plot <- function(data, y_var, title) {
+  ggplot(data, aes(x = topic_name, y = .data[[y_var]], fill = topic_name)) +
+    geom_bar(stat = "identity", show.legend = FALSE) +
+    scale_fill_manual(values = color_topics) + 
+    labs(title = title, x = "Topics", y = "Score") +
+    theme_minimal() +
+    theme(
+      plot.title = element_text(size = 20, hjust = 0.5),
+      axis.title.x = element_text(size = 10),
+      axis.title.y = element_text(size = 10),
+      axis.text.x = element_text(size = 9),
+      axis.text.y = element_text(size = 9),
+      plot.margin = margin(t = 10, r = 10, b = 10, l = 60)
+    ) +
+    scale_y_continuous(limits = c(0, 1.6)) +
+    coord_flip() -> plot
+}
+
+# SHARED DATA
+plot_data_summary <- data %>%
+  select(dominant_topic, Sanctity_total, Care_total) %>%
+  group_by(dominant_topic) %>%
+  summarise(Sanctity_total = mean(Sanctity_total, na.rm = TRUE),
+            Care_total = mean(Care_total, na.rm = TRUE)) %>%
+  mutate(topic_name = recode(dominant_topic, !!!topic_mapping))
+
+# SANCTITY: reorder by Sanctity
+plot_data_sanctity <- plot_data_summary %>%
+  mutate(topic_name = fct_reorder(topic_name, Sanctity_total, .desc = FALSE))
+
+# CARE: reorder by Care
+plot_data_care <- plot_data_summary %>%
+  mutate(topic_name = fct_reorder(topic_name, Care_total, .desc = FALSE))
+
+# GENERATE PLOTS
+sanctity <- make_foundation_plot(plot_data_sanctity, "Sanctity_total", "Total Sanctity language")
+care <- make_foundation_plot(plot_data_care, "Care_total", "Total Care language")
+
+```
+
+```{r}
+care
+sanctity
+```
+```{r}
+ggsave("plots/sanctity_total_plot.png", plot = sanctity, width = 8, height = 6, dpi = 300)
+ggsave("plots/care_total_plot.png", plot = care, width = 8, height = 6, dpi = 300)
+```
+
