@@ -25,3 +25,16 @@ By: Natasha Carpio Castellanos
 
 - [**selfimpr_finaldata.csv**](data/selfimpr_finaldata.csv): This file contains the r/selfimprovement data with LIWC scores, MFD engineered scores, topic designations, and pronoun scores.
 
+## Code 
+
+- [**01-cleaning-notebook.ipynb**](01-cleaning-notebook.ipynb): This notebook does standard preprocessing. It can be used for the three subreddits by changing the name of the source files. 
+
+- [**02-LIWC.ipynb**](02-LIWC.ipynb): This notebook takes the LIWC and MFD scores from the three subreddits, does feature engineering by combining virtue+vice scores per foundation and creates a single file with all three subreddits' data
+
+- [**03-topicmodeling.ipynb**](03-topicmodeling.ipynb): This notebook uses Gensim's LDA topic modeling
+
+- [**04-pronouns.ipynb**](04-pronouns.ipynb): This notebook explores the LIWC's pronouns scores and tries different thresholds for defining what's considered a first-person document and what's not.
+
+- [**05-plots.Rmd**](05-plots.Rmd): This notebook does some plots in ggplot for showcasing results. (Figures that aren't here were done in Tableau)
+
+
