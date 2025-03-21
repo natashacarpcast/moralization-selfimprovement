@@ -41,6 +41,6 @@ By: Natasha Carpio Castellanos
 
 - [**07-moralBERT.ipynb**](07-moralBERT.ipynb): This notebook was obtained from the [moralBERT's authors repository](https://github.com/vjosapreniqi/MoralBERT/blob/main/MoralBert/Predict_mft_scores_from_the_MoralBERT_weights.ipynb) and minimally changed for using the reddit data.
 
--[**08-moralBERT-processing.ipynb**](08-moralBERT-processing.ipynb): This notebook takes the results from MoralBERT and calculates binary scores based on probabilities for each foundation. 
+- [**08-moralBERT-processing.ipynb**](08-moralBERT-processing.ipynb): This notebook takes the results from MoralBERT and calculates binary scores based on probabilities for each foundation. 
 
 
