@@ -33,8 +33,14 @@ By: Natasha Carpio Castellanos
 
 - [**03-topicmodeling.ipynb**](03-topicmodeling.ipynb): This notebook uses Gensim's LDA topic modeling
 
-- [**04-pronouns.ipynb**](04-pronouns.ipynb): This notebook explores the LIWC's pronouns scores and tries different thresholds for defining what's considered a first-person document and what's not.
+- [**04-pronouns.ipynb**](04-pronouns.ipynb): This notebook explores the LIWC's pronouns scores and tries different thresholds for defining what's considered a first-person document and what's not. It also combines the LIWC, MFD, topics and pronouns data into a single file. 
 
 - [**05-plots.Rmd**](05-plots.Rmd): This notebook does some plots in ggplot for showcasing results. (Figures that aren't here were done in Tableau)
+
+- [**06-stats-tests.ipynb**](06-stats-tests.ipynb): This notebook does statistical tests to evaluate differences across subreddits and between moralized/not moralized content. 
+
+- [**07-moralBERT.ipynb**](07-moralBERT.ipynb): This notebook was obtained from the [moralBERT's authors repository](https://github.com/vjosapreniqi/MoralBERT/blob/main/MoralBert/Predict_mft_scores_from_the_MoralBERT_weights.ipynb) and minimally changed for using the reddit data.
+
+-[**08-moralBERT-processing.ipynb**](08-moralBERT-processing.ipynb): This notebook takes the results from MoralBERT and calculates binary scores based on probabilities for each foundation. 
 
 
