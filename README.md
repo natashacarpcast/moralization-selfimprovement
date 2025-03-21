@@ -13,16 +13,15 @@ By: Natasha Carpio Castellanos
 
 * Files were downloaded in .zst format and converted into CSV files using this [python script](https://github.com/Watchful1/PushshiftDumps/blob/master/scripts/to_csv.py) provided by u/Watchful1 (user from Reddit)
 
-* selfimpr_preprocessed, homeowners_preprocessed, investing_preprocessed : These files contains the preprocessed documents for each subreddit after basic data cleaning (removing duplicates, missing data etc.)
+- [**selfimpr_liwc.csv**](data/selfimpr_liwc.csv), [**homeowners_liwc.csv**](data/homeowners_liwc.csv), [**investing_liwc.csv**](data/investing_liwc.csv): These files contain the results for each subreddit after LIWC software and MFD analyses.
 
-* selfimpr_liwc, homeowners_liwc, investing_liwc: These files contain the results for each subreddit after LIWC software and MFD analyses.
+- [**engineered_morality.csv**](data/engineered_morality.csv): This file contains the LIWC and MFD engineered scores for all subreddits. Engineered scores consist of calculation of vice+virtue scores per foundation.
 
-* engineered_morality: This file contains the LIWC and MFD engineered scores for all subreddits. Engineered scores consist on calculation of vice+virtue scores per foundation.
+- [**moralBERT-results folder**](data/moralBERT-results): This folder contains the individual scores for moralBERT in each subreddit + the [**engineered_moralBERTresults.csv**](data/moralBERT-results/engineered_moralBERTresults.csv) file which combines the three subreddits and obtains virtue+vice scores per foundation.
 
-* moralBERT-results folder: This folder contains the individual scores for moralBERT in each subreddit + the engineered_moralBERTresults file which combined the three subreddits and obtained virtue+vice scores per foundation
+- [**selfimpr_topics.csv**](data/selfimpr_topics.csv): This file contains the topic designation for each document in r/selfimprovement.
 
-* selfimpr_topics: This file contains the topic designation for each document in r/selfimprovement
+- [**selfimpr_pronounsdata.csv**](data/selfimpr_pronounsdata.csv): This file contains pronouns LIWC scores for each document in r/selfimprovement.
 
-* selfimpr_pronounsdata: This file contains pronouns LIWC scores for each document in r/selfimprovement
+- [**selfimpr_finaldata.csv**](data/selfimpr_finaldata.csv): This file contains the r/selfimprovement data with LIWC scores, MFD engineered scores, topic designations, and pronoun scores.
 
-* selfimpr_finaldata: This file contains the r/selfimprovement data with LIWC scores, MFD engineered scores, topics designations and pronouns scores. 
