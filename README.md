@@ -13,5 +13,16 @@ By: Natasha Carpio Castellanos
 
 * Files were downloaded in .zst format and converted into CSV files using this [python script](https://github.com/Watchful1/PushshiftDumps/blob/master/scripts/to_csv.py) provided by u/Watchful1 (user from Reddit)
 
-* selfimpr_preprocessed, homeowners_preprocessed, investing_preprocessed : These file contains the preprocessed files after basic data cleaning (removing duplicates, missing data etc.)
+* selfimpr_preprocessed, homeowners_preprocessed, investing_preprocessed : These files contains the preprocessed documents for each subreddit after basic data cleaning (removing duplicates, missing data etc.)
 
+* selfimpr_liwc, homeowners_liwc, investing_liwc: These files contain the results for each subreddit after LIWC software and MFD analyses.
+
+* engineered_morality: This file contains the LIWC and MFD engineered scores for all subreddits. Engineered scores consist on calculation of vice+virtue scores per foundation.
+
+* moralBERT-results folder: This folder contains the individual scores for moralBERT in each subreddit + the engineered_moralBERTresults file which combined the three subreddits and obtained virtue+vice scores per foundation
+
+* selfimpr_topics: This file contains the topic designation for each document in r/selfimprovement
+
+* selfimpr_pronounsdata: This file contains pronouns LIWC scores for each document in r/selfimprovement
+
+* selfimpr_finaldata: This file contains the r/selfimprovement data with LIWC scores, MFD engineered scores, topics designations and pronouns scores. 
