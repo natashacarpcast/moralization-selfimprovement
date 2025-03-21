@@ -17,7 +17,7 @@ By: Natasha Carpio Castellanos
 
 - [**engineered_morality.csv**](data/engineered_morality.csv): This file contains the LIWC and MFD engineered scores for all subreddits. Engineered scores consist of calculation of vice+virtue scores per foundation.
 
-- [**moralBERT-results folder**](data/moralBERT-results): This folder contains the individual scores for moralBERT in each subreddit + the [**engineered_moralBERTresults.csv**](data/moralBERT-results/engineered_moralBERTresults.csv) file which combines the three subreddits and obtains virtue+vice scores per foundation.
+- [**moralBERT-results folder**](data/moralBERT-results): This folder contains the individual scores for moralBERT in each subreddit + the [moralBERT-binary.csv file](data/moralBERT-results/moralBERT-binary.csv) that has the binary designation (present/not present) for each moral foundation. 
 
 - [**selfimpr_topics.csv**](data/selfimpr_topics.csv): This file contains the topic designation for each document in r/selfimprovement.
 
