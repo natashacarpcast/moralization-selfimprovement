@@ -226,35 +226,6 @@ ggsave("plots/care_total_plot.png", plot = care, width = 8, height = 6, dpi = 30
 ```
 
 
-First person vs. not first person
 
-```{r}
-moral_summary <- data %>%
-  group_by(person_focus) %>%
-  summarise(moral = mean(moral, na.rm = TRUE))
-
-# Plot
-pov <- ggplot(moral_summary, aes(x = person_focus, y = moral, fill=person_focus)) +
-  geom_bar(stat = "identity", width = 0.6, show.legend = FALSE) +
-  scale_fill_manual(values = c("#ab931b", "#ad2d7b")) +
-  labs(title = "LIWC moral average score by\n POV of user-generated content", x = "Point of view focus", y = "LIWC moral score") +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(size = 20, hjust = 0.5),
-    axis.title.x = element_text(size = 10),
-    axis.title.y = element_text(size = 10),
-    axis.text.x = element_text(size = 9),
-    axis.text.y = element_text(size = 9),
-    plot.margin = margin(t = 10, r = 10, b = 10, l = 10)
-  )
-
-pov
-
-```
-
-
-```{r}
-ggsave("plots/pov-morality.png", plot = pov, width = 8, height = 6, dpi = 300)
-```
 
 
