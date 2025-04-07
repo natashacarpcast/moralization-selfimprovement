@@ -21,7 +21,7 @@ By: Natasha Carpio Castellanos
 
 - [**selfimpr_topics.csv**](data/selfimpr_topics.csv): This file contains the topic designation for each document in r/selfimprovement.
 
-- [**selfimpr_pronounsdata.csv**](data/selfimpr_pronounsdata.csv): This file contains pronouns LIWC scores for each document in r/selfimprovement.
+- [**selfimpr_by_person_focus.csv**](data/selfimpr_by_person_focus.csv): This file contains posts/comments ids with pronouns designations (e.g. first person vs. not first person focused) .
 
 - [**selfimpr_finaldata.csv**](data/selfimpr_finaldata.csv): This file contains the r/selfimprovement data with LIWC scores, MFD engineered scores, topic designations, and pronoun scores.
 
@@ -33,7 +33,7 @@ By: Natasha Carpio Castellanos
 
 - [**03-topicmodeling.ipynb**](03-topicmodeling.ipynb): This notebook uses Gensim's LDA topic modeling
 
-- [**04-pronouns.ipynb**](04-pronouns.ipynb): This notebook explores the LIWC's pronouns scores and tries different thresholds for defining what's considered a first-person document and what's not. It also combines the LIWC, MFD, topics and pronouns data into a single file. 
+- [**04-pronouns-and-merging.ipynb**](04-pronouns.ipynb): This notebook explores the LIWC's pronouns scores and tries different thresholds for defining what's considered a first-person document and what's not. It also combines the LIWC, MFD, topics and pronouns data into a single file. 
 
 - [**05-plots.Rmd**](05-plots.Rmd): This notebook does some plots in ggplot for showcasing results. (Figures that aren't here were done in Tableau)
 
