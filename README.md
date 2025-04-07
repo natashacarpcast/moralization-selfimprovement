@@ -33,7 +33,7 @@ By: Natasha Carpio Castellanos
 
 - [**03-topicmodeling.ipynb**](03-topicmodeling.ipynb): This notebook uses Gensim's LDA topic modeling
 
-- [**04-pronouns-and-merging.ipynb**](04-pronouns.ipynb): This notebook explores the LIWC's pronouns scores and tries different thresholds for defining what's considered a first-person document and what's not. It also combines the LIWC, MFD, topics and pronouns data into a single file. 
+- [**04-pronouns-and-merging.ipynb**](04-pronouns-and-merging.ipynb): This notebook explores the LIWC's pronouns scores and tries different thresholds for defining what's considered a first-person document and what's not. It also combines the LIWC, MFD, topics and pronouns data into a single file. 
 
 - [**05-plots.Rmd**](05-plots.Rmd): This notebook does some plots in ggplot for showcasing results. (Figures that aren't here were done in Tableau)
 
