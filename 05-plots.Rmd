@@ -22,19 +22,20 @@ library(ggtext)
 # LOAD DATA
 data <- read_csv("data/selfimpr_finaldata.csv")
 ```
+Define topic labels and corresponding colors
 
 ```{r}
 # DEFINE TOPIC LABELS
 topic_mapping <- c(
-  "Topic 1" = "Habits &\n Goals",
-  "Topic 2" = "Education &\n Career",
-  "Topic 3" = "Social\n life",
-  "Topic 4" = "Health &\n Fitness",
-  "Topic 5" = "Social\n media &\n Entertainment",
-  "Topic 6" = "Confidence &\n Dating",
-  "Topic 7" = "Family &\n Finances",
-  "Topic 8" = "Learning",
-  "Topic 9" = "Mental\n health"
+  "1" = "Habits &\n Goals",
+  "2" = "Education &\n Career",
+  "3" = "Social\n life",
+  "4" = "Health &\n Fitness",
+  "5" = "Social\n media &\n Entertainment",
+  "6" = "Confidence &\n Dating",
+  "7" = "Family &\n Finances",
+  "8" = "Learning",
+  "9" = "Mental\n health"
 )
 
 # DEFINE COLORS
@@ -51,7 +52,7 @@ color_topics = c(
 )
 ```
 
-Moralization across topics plot
+Summarize morality scores
 
 ```{r}
 average_morality <- data %>% 
@@ -76,16 +77,26 @@ average_morality <- data %>%
     average_Sanctity_total = mean(Sanctity_total),
     count = n()
   )
+```
 
+Get labels for topics in the summary table
+
+```{r}
 # Replace topic names
-average_morality <- average_morality %>%
-  mutate(topic_name = recode(dominant_topic, !!!topic_mapping)) %>%
-  # reorder so topics with more morality appear at the top
-  mutate(topic_name = fct_reorder(topic_name, average_moral_liwc, .desc = FALSE))
+#average_morality <- average_morality %>%
+ #mutate(topic_name = recode(dominant_topic, !!!topic_mapping)) %>%
+ #reorder so topics with more morality appear at the top
+ #mutate(topic_name = fct_reorder(topic_name, average_moral_liwc, .desc = FALSE))
 
+average_morality <- average_morality %>%
+ mutate(topic_name = recode((dominant_topic), !!!topic_mapping)) %>%
+ mutate(topic_name = fct_reorder(topic_name, average_moral_liwc, .desc = FALSE))
+```
+
+```{r}
 reference_mean = 0.25
 
-fig1 <- ggplot(average_morality, aes(x = average_moral_liwc, y = factor(topic_name), size = count, color = topic_name)) +
+fig1 <- ggplot(average_morality, aes(x = average_moral_liwc, y = factor(topic_name), size = count, color = as.character(topic_name))) +
   geom_point(alpha = 0.6, position = position_jitter(height = 0.2, width = 0)) +  
   geom_vline(xintercept=reference_mean, color="red", linetype ="dashed",size=0.5) +
   scale_size_continuous(range = c(10, 25)) +
@@ -105,7 +116,6 @@ fig1 <- ggplot(average_morality, aes(x = average_moral_liwc, y = factor(topic_na
     legend.position = "none")
 
 fig1
-
 ```
 
 Same moralization across topics but filtering for only posts in first person
