@@ -27,7 +27,7 @@ By: Natasha Carpio Castellanos
 
 ## Code 
 
-- [**01-cleaning-notebook.ipynb**](01-cleaning-notebook.ipynb): This notebook does standard preprocessing. It can be used for the three subreddits by changing the name of the source files. 
+- [**01.1-selfimprovement-cleaning-notebook.ipynb**](01.1-selfimprovement-cleaning-notebook.ipynb), [**01.2-homeowners-cleaning-notebook.ipynb**](01.2-homeowners-cleaning-notebook.ipynb), [**01.3-investing-cleaning-notebook.ipynb**](01.3-investing-cleaning-notebook.ipynb) : These notebooks do standard preprocessing and cleaning for the three subreddits. They are different since the investing data had to be subsampled. 
 
 - [**02-LIWC.ipynb**](02-LIWC.ipynb): This notebook takes the LIWC and MFD scores from the three subreddits, does feature engineering by combining virtue+vice scores per foundation and creates a single file with all three subreddits' data
 
