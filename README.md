@@ -43,4 +43,4 @@ By: Natasha Carpio Castellanos
 
 - [**08-moralBERT-processing.ipynb**](08-moralBERT-processing.ipynb): This notebook takes the results from MoralBERT and calculates binary scores based on probabilities for each foundation. 
 
-
+- [**09-BERTopic.ipybn**](09-BERTopic.ipynb): This notebook does BERTopic modeling on the selfimprovement data. 
