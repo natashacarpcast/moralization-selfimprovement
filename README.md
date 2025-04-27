@@ -25,6 +25,11 @@ By: Natasha Carpio Castellanos
 
 - [**selfimpr_finaldata.csv**](data/selfimpr_finaldata.csv): This file contains the r/selfimprovement data with LIWC scores, MFD engineered scores, topic designations, and pronoun scores.
 
+- [**selfimpr_moraltopic.csv**](data/selfimpr_moraltopic.csv): This data corresponds to documents identified with the morality topic by BERTopic
+
+- [**selfimpr_moraltopic_emo.csv**](data/selfimpr_moraltopic_emo.csv): This is the same data as [selfimpr_moraltopic.csv](data/selfimpr_moraltopic.csv) but with LIWC emotion analyses included. 
+
+
 ## Code 
 
 - [**01.1-selfimprovement-cleaning-notebook.ipynb**](01.1-selfimprovement-cleaning-notebook.ipynb), [**01.2-homeowners-cleaning-notebook.ipynb**](01.2-homeowners-cleaning-notebook.ipynb), [**01.3-investing-cleaning-notebook.ipynb**](01.3-investing-cleaning-notebook.ipynb) : These notebooks do standard preprocessing and cleaning for the three subreddits. They are different since the investing data had to be subsampled. 
